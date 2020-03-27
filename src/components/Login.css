@@ -1,0 +1,28 @@
+/* .USER{
+      height: 45;
+      border-radius: 25;
+      font-size: 20;
+      padding-left: 45;
+      background-color: '#FF33BB';
+      color: 'white';
+       marginHorizontal: 25; 
+      border-color: '#147ACF';
+      border-width: 3;
+      color: 'white'
+} */
+
+.USER{
+    margin-left: 30%;
+    margin-right: 50%;
+}
+.top{
+    margin-top: 20px;
+    margin-left: 20%;
+    
+}
+.center{
+    margin-left: 25%;
+    margin-right: 50%;
+    color: blue;
+    border-radius: 2px;
+}

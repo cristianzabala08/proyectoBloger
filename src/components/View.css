@@ -1,0 +1,40 @@
+.pequeña{
+    width: 150px; height: 150px;
+    margin-left: auto;
+  }
+
+  .boder{
+    border: 2px solid #EA3FC1;
+  border-radius: 10px 10px;
+}
+
+.Fitness-Add {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 40px;
+}
+
+.Fitness-wellcome-Info{
+    font-size: 18px;
+    color: black;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    
+}
+
+.card {
+    margin-top: 1em;
+    border: none;
+    border-radius: auto;
+  /*   background: url('../../images/nueva.png') no-repeat, linear-gradient(to right, #A74CF2, #617BFB);
+ */
+}
+
+.Fitness-Card {
+    max-height: auto;
+    max-width: auto;
+}
