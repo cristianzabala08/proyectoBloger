@@ -71,3 +71,10 @@ input[type='submit'] {
 .check {
   font-size: 16px;
 }
+
+div {
+  max-width: auto;
+  min-width: 300px;
+/*   max-height: 600px;
+  min-height: 200px; */
+}

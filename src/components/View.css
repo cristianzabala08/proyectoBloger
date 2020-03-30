@@ -38,3 +38,8 @@
     max-height: auto;
     max-width: auto;
 }
+
+.arreglo{
+  max-height: 600px;
+  min-height: 200px;
+}

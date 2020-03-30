@@ -1,8 +1,9 @@
 .Fitness-wellcome-Info{
     font-size: 18px;
     color: black;
-    margin-top: 1em;
-    margin-bottom:2em ;
+    margin-top: auto;
+    margin-bottom:auto ;
     margin-right: auto;
+    flex: auto;
     
 }

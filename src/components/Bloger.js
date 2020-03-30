@@ -18,7 +18,7 @@ const Bloger = ({ email }) => {
     const [gusto2, setgusto2] = useState('');
     const [facebook, setfacebook] = useState('');
     const [instagram, setinstagram] = useState('');
-   
+
 
     useEffect(() => {
 
@@ -46,20 +46,20 @@ const Bloger = ({ email }) => {
 
     };
 
-    function onDelete(id, email1,url) {
+    function onDelete(id, email1, url) {
         if (email === email1) {
             if (window.confirm("SEGURO QUE QUIERES ELIMINAR SU POST")) {
 
                 const db = fire.firestore()
                 db.collection('tasks').doc(id).delete()
 
-                    let  storageRef = fire.storage();
-                    let desertRef = storageRef.refFromURL(url)
+                let storageRef = fire.storage();
+                let desertRef = storageRef.refFromURL(url)
 
                 desertRef.delete().then(function () {
-                    
+
                 }).catch(function (error) {
-  
+
                 });
             }
 
@@ -71,7 +71,7 @@ const Bloger = ({ email }) => {
     const singout = () => {
         fire.auth().signOut();
     }
-  
+
     return (
         <div>
             <div >
@@ -179,7 +179,7 @@ const Bloger = ({ email }) => {
                     </div>
                 </Col>
             </Row>
-            {tasks.map(spell => (
+            {/*     {tasks.map(spell => (
                 <div className="card mx-auto Fitness-Card"
                     style={{
                         backgroundImage: `url(${exerciseImg}), linear-gradient(to right, ${spell.color || '#56CCF2'}  , ${spell.color1 || '#2F80ED'}) `
@@ -206,7 +206,52 @@ const Bloger = ({ email }) => {
                             Delet</Button>
                     </div>
                 </div>
+            ))} */}
+
+
+            {tasks.map(spell => (
+                <div className="card mx-auto Fitness-Card"
+                    style={{
+                        backgroundImage: `url(${exerciseImg}), linear-gradient(to right, ${spell.color || '#56CCF2'}  , ${spell.color1 || '#2F80ED'}) `
+                    }}
+                    key={spell.id}
+                >
+                    <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active arreglo">
+                                <img src={spell.codigo} className="d-block w-100" alt="..." />
+                                <div className="carousel-caption ">
+                                    <div className="card-body ">
+                                        <h5 style={{
+                                            color: `${spell.color}`
+                                        }} className="card-title">Name: {spell.name}</h5>
+                                        <p className="card-text">Coment {spell.comentario}
+                                        </p>
+                                    </div>
+                                    <p className="list-group" style={{
+                                        color: `${spell.color1}`
+                                    }}>
+                                        <li>nickname: {spell.name1}</li>
+                                        <li>what i like {spell.gusto1}</li>
+                                        <li >{spell.gusto2}</li>
+                                    </p>
+                                    <div className="card-body">
+                                        <a href={spell.facebook} className="card-link">Facebook</a>
+                                        <a href={spell.instagram} className="card-link">Instagrams</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <Button className="btn btn-default" variant="danger" onClick={() => onDelete(spell.id, spell.email,spell.codigo)} >
+                            Delet</Button>
+                   
+                </div>
+
+
+
             ))}
+
         </div>
     );
 }
